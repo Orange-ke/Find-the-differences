@@ -8,10 +8,28 @@
     <meta name="keywords" content="找别扭">
 	<meta name="viewport" content="width=device-width,inicial-scale=1,user-scalable=no">
 	<title>找别扭</title>
-	<link rel="stylesheet" type="text/css" href="./main.css">
-    <script type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-  <h1>找别扭</h1>
+  <div id="bin-im">
+    <div id="container">
+	    <h1 id="title">找别扭</h1>
+	  	<img src="images/eminem1_big.jpg" id="left" class="bin-im">
+	  	<img src="images/eminem2_big.jpg" id="right" class="bin-im">
+	  	<img src="images/midddle.png" id="middle" class="bin-im">
+  	</div>
+  </div>
+  <div class="mainContent">
+  	<p>mainContent</p>
+  </div>
+  <script type="text/javascript">
+  	$(document).ready(function() {
+        setTimeout(delayFn,3000);
+        function delayFn() {
+        	$("#bin-im").fadeOut(800);
+        }
+  	});
+  </script>
 </body>
 </html>
