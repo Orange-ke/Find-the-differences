@@ -15,7 +15,8 @@
 }
 
 body {
-	font-family: 'Microsoft Yahei',Arial,serif;
+	font-family: Microsoft Yahei,Arial,serif;
+	font-weight: bold;
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+100,e0eff9+100,b5c6d0+100;Grey+Gloss+%232 */
     background: rgb(242,246,248); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 100%, rgba(224,239,249,1) 100%, rgba(181,198,208,1) 100%); /* FF3.6-15 */

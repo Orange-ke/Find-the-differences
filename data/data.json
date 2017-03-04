@@ -4,6 +4,25 @@
     "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
     "genre": "eye",
      "A": { 
+      "describe": "2处不同",
+      "bonus": 10,
+      "eye_score": 1
+      },
+      "B": {
+        "describe": "3处不同"
+      },
+      "C": {
+        "describe": "4处不同"
+      },
+      "D": {
+        "describe": "5处不同"
+      }
+  },
+  {
+    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
+    "genre": "eye",
+     "A": { 
       "describe": "2处不同"
       },
       "B": {
@@ -17,5 +36,139 @@
       "D": {
         "describe": "5处不同"
       }
-  }
+  },
+  {
+    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
+    "genre": "eye",
+     "A": { 
+      "describe": "2处不同"
+      },
+      "B": {
+        "describe": "3处不同",
+        "bonus": 10,
+        "eye_score": 1
+      },
+      "C": {
+        "describe": "4处不同"
+      },
+      "D": {
+        "describe": "5处不同"
+      }
+  },
+  {
+    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
+    "genre": "eye",
+     "A": { 
+      "describe": "2处不同"
+      },
+      "B": {
+        "describe": "3处不同"
+      },
+      "C": {
+        "describe": "4处不同",
+        "bonus": 10,
+        "eye_score": 1
+      },
+      "D": {
+        "describe": "5处不同"
+      }
+  },
+  {
+    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
+    "genre": "eye",
+     "A": { 
+      "describe": "2处不同"
+      },
+      "B": {
+        "describe": "3处不同"
+      },
+      "C": {
+        "describe": "4处不同",
+        "bonus": 10,
+        "eye_score": 1
+      },
+      "D": {
+        "describe": "5处不同"
+      }
+  },
+  {
+    "describe": "<b>这段音乐的节奏变化是？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/a.mp3'></audio>",
+    "genre": "rhythm",
+    "A": { 
+      "describe": "越来越快"
+    },
+    "B": {
+      "describe": "没有变化",
+      "bonus": 10,
+      "r_score": 1
+    } 
+  },
+  {
+    "describe": "<b>这段音乐的速度是否有变化？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/b.mp3'></audio>",
+    "genre": "rhythm",
+    "A": {
+      "describe": "越来越快"
+    },
+    "B": {  
+      "describe": "没有变化",
+      "bonus": 10,
+      "r_score": 1
+    } 
+  },
+  {
+    "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/f.mp3'></audio>",
+    "genre": "memo",
+    "A": {
+      "describe": "完全相同"
+    },
+    "B": {
+      "describe": "不同，节奏不一致"
+    },
+    "C": { 
+      "describe": "不同，音高不一致",
+      "bonus": 10,
+      "memo_score": 1
+    }
+  },
+  {
+    "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/g.mp3'></audio>",
+    "genre": "memo",
+    "A": { 
+      "describe": "完全相同"
+    },
+    "B": {
+      "describe": "不同，节奏不一致"
+    },
+    "C": {
+      "describe": "不同，音高不一致",
+      "bonus": 10,
+      "memo_score": 1
+    }
+  },
+  {
+    "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='audios/h.mp3'></audio>",
+    "genre": "memo",
+    "A": { 
+      "describe": "完全相同"
+    },
+    "B": {
+      "describe": "不同，节奏不一致"
+    },
+    "C": {
+      "describe": "不同，音高不一致",
+      "bonus": 10,
+      "memo_score": 1
+    },
+    "D": {
+      "describe": "节奏和音高都不同"
+    }
+  }  
 ]
