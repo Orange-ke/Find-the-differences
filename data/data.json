@@ -1,0 +1,21 @@
+[
+  {
+    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "photo": "<img class='photos' id='photo1' src='music_photo/coldplay3.jpg'><img class='photos' id='photo2' src='music_photo/daftpunk3.jpg'>",
+    "genre": "eye",
+     "A": { 
+      "describe": "2处不同"
+      },
+      "B": {
+        "describe": "3处不同",
+        "bonus": 10,
+        "eye_score": 1
+      },
+      "C": {
+        "describe": "4处不同"
+      },
+      "D": {
+        "describe": "5处不同"
+      }
+  }
+]

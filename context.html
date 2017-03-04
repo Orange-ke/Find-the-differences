@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Orange-ke">
+	<meta http-equiv="Cache-Control" content="no-transform">
+	<meta name="description" content="试玩一下这款画风不错又有新意的测试小游戏吧！">
+	<meta name="keywords" content="测试，小测试，Find the differences，Find，differences">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+	<title>Find The Diferences</title>
+	<!-- <link rel="stylesheet" href="min.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+	<div class="header_title">
+		<p class="title">
+		<span  class="a">F</span>
+		<span  class="b">i</span>
+		<span  class="c">n</span>
+		<span  class="d">d</span>
+		&nbsp;
+		<span  class="e">T</span>
+		<span  class="f">h</span>
+		<span  class="g">e</span>
+		&nbsp;
+		<span  class="h">D</span>
+		<span  class="i">i</span>
+		<span  class="j">f</span>
+		<span  class="r">f</span>
+		<span  class="k">e</span>
+		<span  class="l">r</span>
+		<span  class="m">e</span>
+		<span  class="n">n</span>
+		<span  class="o">c</span>
+		<span  class="p">e</span>
+		<span  class="q">s</span>
+		</p>
+	</div>
+	<div class="progress">
+	    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+			10%
+	    </div>
+	</div><!-- ******************************************** progress -->
+    <div class="inner_container">
+		<div class="main_content">
+			<div class="begin_intro">
+				<p>测试分为两部分：</p>
+				<ul>
+					<li>
+						<p>视觉部分---></p>
+						<img src="">
+					</li>
+					<li>
+						<p>听觉部分---></p>
+		                <img src="">
+		                <button id="test" class="">测试音量</button>
+		                <audio></audio>
+					</li>
+				</ul>
+				<button id="start_">开始测试</button>
+			</div> <!-- ******************************************** beginning intro -->
+			<div hidden class="test_content_1" id="test_1">
+			   <div class="eye_test_intro" id="_intro">
+					<p>视觉部分</p>
+					<!-- <img  src=""> -->
+					<!-- <p>请找出两幅图片中有几处不同！</p> -->
+			   </div>
+			   <!-- <div class="eye_test_photo">
+			   	    <div id="photo_1" class="photo"></div>
+			   	    <div id="photo_2" class="photo"></div>
+			   </div> -->
+			   <div class="choices">
+			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">2处不同</button><br>
+			   	  <button data-choice="B" id="choiceB" class="choice" disabled="disabled">3处不同</button><br>
+			   	  <button data-choice="C" id="choiceC" class="choice" disabled="disabled">4处不同</button><br>
+			   	  <button data-choice="D" id="choiceD" class="choice" disabled="disabled">5处不同</button>
+			   </div>
+			</div> <!-- ******************************************** eye test -->
+			<div hidden class="test_content_2">
+			   <div class="ear_test_intro">
+					<p>听觉部分</p>
+					<img src="" id="bar">
+					<img src="" id="spinner">
+					<img src="" id="start_bt">
+					<p>请分辨两段音乐中有什么不同？音乐最多可播放两次，播放两次后必须作答！</p>
+			   </div>
+			   <div class="ear_test_music">
+			   	    <div id="music_2" class="music"></div>
+			   </div>
+			   <div class="choices">
+			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">节奏不同</button><br>
+			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">音高不同</button><br>
+			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled"></button><br>
+			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled"></button>
+			   </div>
+			</div> <!-- ******************************************** ear test -->
+			<div hidden class="result">
+				<div class="result_title">
+					<p>测试结果：</p>
+				</div>
+				<div class="final_score">
+					<p>您的最终得分为：</p>
+					<p class="commit">顺风耳和千里眼的结合者就是您了！</p>
+				</div>
+				<div class="final_perct">
+					<p class="perct">击败了全国<span class="perctenge">90%</span>的玩家！</p>
+				</div>
+				<div class="ab_detail">
+					<div class="detail_1 detail">
+						<p>视觉</p>
+						<label class="eye_1">近视眼</label>
+						<label class="eye_2">正常</label>
+						<label class="eye_3">千里眼</label>
+					</div>
+					<div class="detail_2 detail">
+						<p>听觉</p>
+						<label class="ear_1">耳背？</label>
+						<label class="ear_2">正常</label>
+						<label class="ear_3">顺风耳</label>
+					</div>
+				</div>
+			</div>  <!-- ******************************************** test result -->
+		</div> <!-- ******************************************** main content -->
+	</div> <!-- ********************************************  inner_content -->
+</div> <!-- ******************************************** container -->
+
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript" src='js/calculate.js'></script>
+
+</body>
+</html>
