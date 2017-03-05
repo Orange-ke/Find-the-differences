@@ -11,14 +11,15 @@ $(function() {
 /* -------------------------------------------------------------------variable definition*/
 
       var q, k, m; //q for questions; k for question number in JSON; m for answer scores
-      var p = 0; //l for progress
-      var t = 0; //s for total scores
+      var p = 10; //p for progress
+      var t = 0; //t for total scores
       var n = 1; //n for question number in test
       var b_1 = 15; //b_1 for quickly find bonus
       var b_2 = 15; //b_2 for repeating music bonus
       var qar = []; //qar for questions array
       var playN = 0, eye_score = 0 , ear_score = 0 ;
       var eye_star , ear_star ; // genre stars
+      var b , z , x;
       var isPlaying = false, lasting_time = 10, count_t , startButton , c , intervalHandle;
 
     function first() {
@@ -27,7 +28,7 @@ $(function() {
        $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
     }
 
-/* ------------------------------------------------------------append first song onto the board */
+/* ------------------------------------------------------------append first photo onto the board */
 
     $('#start_').click(function() {
        $('.header_title').hide(500);
@@ -43,6 +44,32 @@ $(function() {
          $('.choices button.choice').prop('disabled',false);
        },5000);
     })  
+
+    $('.choice').click(function () {
+        var y = $(this).attr('data-choice');
+        n += 1;
+        p += 10;
+        b = q[k];
+        if (k < 10) {
+           m = b[y].bonus || 0;
+           s += m;
+           z = b[y].eye_score || 0;
+           eye_score += z;
+           x = b[y].ear_score || 0;
+           ear_score += x;
+        } 
+        $('.progress > div').css('width',p + '%');
+        $(".progress > div").text(p + '%');
+        $(".progress > div").prop('aria-valuenow', p);
+        
+        $('.test_content_1').addClass('fadeOutLeft animatedFast');
+        $('.choice').prop('disabled', true);
+        setTimeout(function(){
+           k += 1;
+           $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
+        },200);
+        counting();
+    })
 
 /* -------------------------------------------------------------------倒计时 */
 
