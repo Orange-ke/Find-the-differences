@@ -11,7 +11,7 @@ $(function() {
 /* -------------------------------------------------------------------variable definition*/
 
       var q, k, m; //q for questions; k for question number in JSON; m for answer scores
-      var p = 10; //p for progress
+      var p = 0; //p for progress
       var t = 0; //t for total scores
       var n = 1; //n for question number in test
       var b_1 = 15; //b_1 for quickly find bonus
@@ -28,6 +28,14 @@ $(function() {
        $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
     }
 
+    function delay() { 
+      if (n < 11) {
+        setTimeout(function() {
+          $('.choice').prop('disabled', false);
+        }, 2000);
+      }
+    }
+
 /* ------------------------------------------------------------append first photo onto the board */
 
     $('#start_').click(function() {
@@ -40,19 +48,19 @@ $(function() {
        first();
        cover();
        counting();
-       setTimeout(function() {
-         $('.choices button.choice').prop('disabled',false);
-       },5000);
     })  
 
     $('.choice').click(function () {
+        clearInterval(intervalHandle);
+        $('#inputMin').css('display','none');
+        q = qar;
         var y = $(this).attr('data-choice');
         n += 1;
         p += 10;
         b = q[k];
         if (k < 10) {
            m = b[y].bonus || 0;
-           s += m;
+           t += m;
            z = b[y].eye_score || 0;
            eye_score += z;
            x = b[y].ear_score || 0;
@@ -61,24 +69,38 @@ $(function() {
         $('.progress > div').css('width',p + '%');
         $(".progress > div").text(p + '%');
         $(".progress > div").prop('aria-valuenow', p);
-        
+        if ($('.test_content_1').hasClass('fadeInRight animated')) {$('.test_content_1').removeClass('fadeInRight animated')};
         $('.test_content_1').addClass('fadeOutLeft animatedFast');
         $('.choice').prop('disabled', true);
         setTimeout(function(){
            k += 1;
            $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
+           $('#overCover').css('display','block');
+           $('#start_bnt').css('display','inline');
+           if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'block')} else {$('#choiceC').css('display', 'none')};
+           if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'block');$('.choice').css('margin', '-6px auto')} else {$("#choiceD").css('display', 'none');$('.choice').css('margin', '2px auto')};
+           $("#choiceA").html(q[k].A.describe);
+           $("#choiceB").html(q[k].B.describe);
+           if (q[k].hasOwnProperty('C')) {$('#choiceC').html(q[k].C.describe)};
+           if (q[k].hasOwnProperty('D')) {$('#choiceD').html(q[k].D.describe)};
+           $('.test_content_1').removeClass('fadeOutLeft animatedFast').addClass('fadeInRight animated');
         },200);
-        counting();
     })
 
 /* -------------------------------------------------------------------倒计时 */
+    
+    function zero() {
+      c = lasting_time;
+      count_t.innerHTML = c;
+      lasting_time -= 5;
+    }
 
     function counting() {
-       c = lasting_time;
-       var count_t = document.createElement("span");
-       var startButton = document.createElement("button");
+       count_t = document.createElement("span");
+       startButton = document.createElement("button");
            startButton.setAttribute("type" , "button");
            startButton.setAttribute("value" , "text");
+           startButton.setAttribute("id" , "start_bnt");
        var para = document.getElementById('para');
        count_t.setAttribute("id" , "inputMin");
        count_t.style.width = 20 + 'px';
@@ -89,7 +111,6 @@ $(function() {
        count_t.style.fontSize = 20 + 'px';
        count_t.style.fontWeight = 'bolder';
        count_t.style.color = '#FE9F00';
-       count_t.innerHTML = lasting_time;
        startButton.style.position = 'absolute';
        startButton.style.top = 180 + 'px';
        startButton.style.left = 50 + '%';
@@ -99,24 +120,26 @@ $(function() {
        document.getElementById('test_1').appendChild(count_t);
        document.getElementById('_intro').appendChild(startButton);
        startButton.onclick = function() {
+            zero();
             countDown();
             document.getElementById('overCover').style.display = 'none';
+            startButton.style.display = 'none';
+            document.getElementById('inputMin').style.display = 'inline';
+            delay();
        };
        startButton.innerHTML = "Start it" ;
 
       function countDown() {
          intervalHandle = setInterval(tick,1000);
-         startButton.style.display = 'none';
       }
 
-      function tick() {
+      function tick() { 
          c--;
          count_t.innerHTML = c;
          if (c === 0) {
            clearInterval(intervalHandle);
-           startButton.innerHTML = 'Times up, please choose a choice';
-           startButton.style.color = '#FE9F00';
-           startButton.style.backgroundColor = 'black';
+           document.getElementById('inputMin').style.display = 'none';
+           cover();
          }
       }
     }
