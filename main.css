@@ -397,7 +397,7 @@ b {
 	width: 100%;
 	height: 630px;
 	background-size: contain;
-	background: url(music_photo/2.JPG) no-repeat;
+	background: url(music_photo/2.jpg) no-repeat;
 	z-index: 667;
 	display: none;
 } 
