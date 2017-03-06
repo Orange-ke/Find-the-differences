@@ -16,8 +16,6 @@
 
 body {
 	font-family: Microsoft Yahei,Arial,serif;
-	font-weight: bold;
-	font-size: 150%;
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+100,e0eff9+100,b5c6d0+100;Grey+Gloss+%232 */
     background: rgb(242,246,248); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 100%, rgba(224,239,249,1) 100%, rgba(181,198,208,1) 100%); /* FF3.6-15 */
@@ -33,17 +31,17 @@ div {
 .container {
 	margin: 0 auto;
 	width: 100%;
-	height: 100vh;
+	height: 700px;
 	position: relative;
 }
 
 .inner_container {
     position: relative;
-    width: 90%;
+    width: 90.2%;
     top: 45px;
     background: #f5f5f5;
 	margin: 0 auto;
-	height: 90vh;
+	height: 630px;
 	border-radius: 30px/5px;
 	border: 1px solid #FFC107;
 	box-shadow: 5px 0px 5px #000,0px 5px 5px #000;
@@ -82,6 +80,7 @@ div {
     left: 50%;
     text-align: center;
     -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .begin_intro ul {
@@ -311,10 +310,11 @@ div {
 	top: 10px;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .eye_test_intro > p {
-	padding: 20px 0;
+	padding: 0;
 }
 
 /********************************************************Begin intro style*/
@@ -324,31 +324,63 @@ div {
 	position: relative;
 }
 
+b {
+	line-height: 30px;
+}
+
+#title2 {
+	color: #f5f5f5;
+}
+
 .photos {
+	margin-top: 10px;
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	outline-style: ridge;
 	outline-color: #FE9F00;
-	outline-width: 5px;
-	margin-top: 20px;
+	outline-width: 3px;
 }
 
-/*.slide {
-	border: 1px solid #FE9F00;
-	border-radius: 20px 20px;
+.slide {
+	top: 25px;
+	border: 2px solid #202020;
+	border-radius: 10px 10px;
+	box-shadow: 3px 3px 3px #efe;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 	z-index: 999;
     text-align: center;
-	opacity: 0.98;
 	position: absolute;
+    display: none;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+
+}
+
+#door {
+	border-radius: 8px 8px;
+}
+
+.music_spinner {
 	display: none;
-	width: 80%;
-	height: 50vh;
-	background: url(music_photo/slide.jpg);
-}*/
+}
+
+.center1,.center2,#play_bt {
+	position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+#play_bt {
+	top: 195px;
+}
+
+.center1 {
+	top: 70px;
+}
 
 #rule {
 	color: #FE9F00;
@@ -360,13 +392,12 @@ div {
 }
 
 #cover {
-	overflow: hidden;
 	text-align: center;
 	position: absolute;
 	width: 100%;
-	height: 90vh;
-	background-size: cover;
-	background: url(music_photo/cover_background.JPG) no-repeat;
+	height: 630px;
+	background-size: contain;
+	background: url(music_photo/2.JPG) no-repeat;
 	z-index: 667;
 	display: none;
 } 
@@ -396,6 +427,14 @@ div {
 	border-radius: 20px 20px;
 	border: 2px solid #FE9F00;
 	box-shadow: 5px 5px 3px #000;
+}
+
+.choice:first-child {
+	margin-top: 30px;
+}
+
+.choice {
+	margin-top: 10px;
 }
 
 @-webkit-keyframes fadeOutLeft {
@@ -489,34 +528,94 @@ div {
 }
 
 .slideDown {
-	-webkit-animation-name: slideDown;
-	animation-name: slideDown;
+	-webkit-transform-origin: top right;
+    transform-origin: top right;
+	-webkit-animation: slideDown 1s cubic-bezier(0.250,0.360,0.450,0.940) 1 normal both;
+	animation: slideDown 1s cubic-bezier(0.250,0.360,0.450,0.940) 1 normal both;
 }
 
 @-webkit-keyframes slideDown {
   from {
-    opacity: 0;
-    -webkit-transform: translateY(-600px);
-    transform: translateY(-600px);
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
   }
 
   to {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 }
 
 @keyframes slideDown {
   from {
-    opacity: 0;
-    -webkit-transform: translateY(-600px);
-    transform: translateY(-600px);
+    -webkit-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
   }
 
   to {
-    opacity: 1;
-    -webkit-transform: translateY(100px);
-    transform: translateY(100px);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+
+.rotate_bar {
+	-webkit-transform-origin: 29px 25px;
+    transform-origin: 29px 25px;
+	-webkit-animation: rotate_ .5s linear 1 normal both;
+	animation: rotate_ .5s linear 1 normal both;
+}
+
+@-webkit-keyframes rotate_ {
+  from {
+    -webkit-transform: rotateY(-60deg);
+    transform: rotateY(-60deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(-20deg);
+    transform: rotateZ(-20deg);
+  }
+}
+
+@keyframes rotate_ {
+  from {
+    -webkit-transform: rotateZ(-60deg);
+    transform: rotateZ(-60deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(-20deg);
+    transform: rotateZ(-20deg);
+  }
+}
+
+.spinning {
+	-webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+	-webkit-animation: spin 10s linear .5s infinite normal both;
+	animation: spin 10s linear .5s infinite normal both;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateZ(-360deg);
+    transform: rotateZ(-360deg);
+  }
+
+  to {
+    -webkit-transform: rotateZ(0deg);
+    transform: rotateZ(0deg);
   }
 }

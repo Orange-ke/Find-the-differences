@@ -62,7 +62,7 @@
 				<button id="start_">开始测试</button>
 			</div> <!-- ******************************************** beginning intro -->
             <div id="slide_down" class="slide">
-            	<p id="rule">您的时间用完了，请选择一个答案！</p>
+                <img src="music_photo/1.jpg" id="door">
             </div>
 		    <div id="cover">
 		        <p id="hint"></p>
@@ -71,7 +71,16 @@
                
             <div hidden class="test_content_1" id="test_1">
 			   <div class="eye_test_intro" id="_intro">
-					<p>视觉部分</p>
+			      <div class="music_spinner">
+			        <div class="center1">
+			           <img src="music_photo/spinner.png" id="spinner">
+			        </div>
+			        <div class="center2">
+			           <img src="music_photo/bar.png" id="bar">
+			        </div>
+			        <button><img src="music_photo/" id="play_bt"></button>
+				  </div>
+				    <p>视觉部分</p>
 			   </div>
 			   <div class="choices">
 			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">2处不同</button><br>
@@ -79,26 +88,7 @@
 			   	  <button data-choice="C" id="choiceC" class="choice" disabled="disabled">4处不同</button><br>
 			   	  <button data-choice="D" id="choiceD" class="choice" disabled="disabled">5处不同</button>
 			   </div>
-			</div> <!-- ******************************************** eye test -->
-			
-			<div hidden class="test_content_2">
-			   <div class="ear_test_intro">
-					<p>听觉部分</p>
-					<img src="" id="bar">
-					<img src="" id="spinner">
-					<img src="" id="start_bt">
-					<p>请分辨两段音乐中有什么不同？音乐最多可播放两次，播放两次后必须作答！</p>
-			   </div>
-			   <div class="ear_test_music">
-			   	    <div id="music_2" class="music"></div>
-			   </div>
-			   <div class="choices">
-			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">节奏不同</button><br>
-			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">音高不同</button><br>
-			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled"></button><br>
-			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled"></button>
-			   </div>
-			</div> <!-- ******************************************** ear test -->
+			</div> <!-- ******************************************** test -->
 			<div hidden class="result">
 				<div class="result_title">
 					<p>测试结果：</p>
