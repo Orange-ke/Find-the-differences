@@ -61,16 +61,18 @@
 				</ul>
 				<button id="start_">开始测试</button>
 			</div> <!-- ******************************************** beginning intro -->
-			<div hidden class="test_content_1" id="test_1">
+            <div id="slide_down" class="slide">
+            	<p id="rule">您的时间用完了，请选择一个答案！</p>
+            </div>
+		    <div id="cover">
+		        <p id="hint"></p>
+                <button id="start_bnt">点击开始</button>
+            </div> <!-- ******************************************** cover --> 
+               
+            <div hidden class="test_content_1" id="test_1">
 			   <div class="eye_test_intro" id="_intro">
 					<p>视觉部分</p>
-					<!-- <img  src=""> -->
-					<!-- <p>请找出两幅图片中有几处不同！</p> -->
 			   </div>
-			   <!-- <div class="eye_test_photo">
-			   	    <div id="photo_1" class="photo"></div>
-			   	    <div id="photo_2" class="photo"></div>
-			   </div> -->
 			   <div class="choices">
 			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">2处不同</button><br>
 			   	  <button data-choice="B" id="choiceB" class="choice" disabled="disabled">3处不同</button><br>
@@ -78,6 +80,7 @@
 			   	  <button data-choice="D" id="choiceD" class="choice" disabled="disabled">5处不同</button>
 			   </div>
 			</div> <!-- ******************************************** eye test -->
+			
 			<div hidden class="test_content_2">
 			   <div class="ear_test_intro">
 					<p>听觉部分</p>

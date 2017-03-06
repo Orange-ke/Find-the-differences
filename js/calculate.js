@@ -39,20 +39,22 @@ $(function() {
 /* ------------------------------------------------------------append first photo onto the board */
 
     $('#start_').click(function() {
-       $('.header_title').hide(500);
-       $('.begin_intro').hide(500);
+       $('#cover').show(400);
+       $('#hint').text('请在点击开始后的屏幕右上角显示的时间内完成选择，若在30秒内选择正确，有额外奖励！');
+       $('.header_title').hide(200);
+       $('.begin_intro').hide(200);
        setTimeout(function() {
-         $('.test_content_1').show(500);
-         $('.progress').show(500);
-       },500)
+         $('.test_content_1').show(200);
+         $('.progress').show(200);
+       },200)
        first();
-       cover();
        counting();
     })  
 
     $('.choice').click(function () {
         clearInterval(intervalHandle);
         $('#inputMin').css('display','none');
+        $('#slide_down').hide(200);
         q = qar;
         var y = $(this).attr('data-choice');
         n += 1;
@@ -75,8 +77,9 @@ $(function() {
         setTimeout(function(){
            k += 1;
            $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
-           $('#overCover').css('display','block');
-           $('#start_bnt').css('display','inline');
+           cover();
+           $('#hint').text('您的可用时间缩短了！');
+           $('#start_bnt').text('开始下一题');
            if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'block')} else {$('#choiceC').css('display', 'none')};
            if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'block');$('.choice').css('margin', '-6px auto')} else {$("#choiceD").css('display', 'none');$('.choice').css('margin', '2px auto')};
            $("#choiceA").html(q[k].A.describe);
@@ -96,11 +99,8 @@ $(function() {
     }
 
     function counting() {
+       var startButton = document.getElementById('start_bnt');
        count_t = document.createElement("span");
-       startButton = document.createElement("button");
-           startButton.setAttribute("type" , "button");
-           startButton.setAttribute("value" , "text");
-           startButton.setAttribute("id" , "start_bnt");
        var para = document.getElementById('para');
        count_t.setAttribute("id" , "inputMin");
        count_t.style.width = 20 + 'px';
@@ -111,23 +111,15 @@ $(function() {
        count_t.style.fontSize = 20 + 'px';
        count_t.style.fontWeight = 'bolder';
        count_t.style.color = '#FE9F00';
-       startButton.style.position = 'absolute';
-       startButton.style.top = 180 + 'px';
-       startButton.style.left = 50 + '%';
-       startButton.style.transform = 'translateX(-50%)';
-       // startButton style by bootstrap;
-       startButton.style.zIndex = 667;
        document.getElementById('test_1').appendChild(count_t);
-       document.getElementById('_intro').appendChild(startButton);
        startButton.onclick = function() {
             zero();
             countDown();
-            document.getElementById('overCover').style.display = 'none';
-            startButton.style.display = 'none';
+            document.getElementById('cover').setAttribute("class", "fadeOutLeft animatedFast");
+            startButton.style.display = 'inline';
             document.getElementById('inputMin').style.display = 'inline';
             delay();
        };
-       startButton.innerHTML = "Start it" ;
 
       function countDown() {
          intervalHandle = setInterval(tick,1000);
@@ -139,7 +131,7 @@ $(function() {
          if (c === 0) {
            clearInterval(intervalHandle);
            document.getElementById('inputMin').style.display = 'none';
-           cover();
+           $('.photos').hide(500);
          }
       }
     }
@@ -154,27 +146,13 @@ $(function() {
     }
 
 /* -------------------------------------------------------------------mask for start*/
+    
+    function slide_down() {
+       $('#slide_down').show(200);
+    }
 
     function cover() {
-       var coverImg = document.createElement('div');
-       var hintText = document.createElement('p')
-       hintText.id = 'hint';
-       coverImg.appendChild(hintText);
-       document.getElementById('test_1').appendChild(coverImg);
-       coverImg.id = 'overCover'; 
-       coverImg.style.position = 'absolute';
-       coverImg.style.top = 50 + 'px';
-       coverImg.style.left = 50 + '%';
-       coverImg.style.transform = 'translateX(-50%)';
-       coverImg.style.width = 50 + '%';
-       coverImg.style.height = 240 + 'px';
-       coverImg.style.zIndex = 666;
-       coverImg.style.opacity = 0.98;
-       coverImg.style.backgroundColor = '#000';
-       coverImg.style.borderRadius = 20 + 'px' + ' ' +  20 + 'px';
-       hintText.innerHTML = '请在' + lasting_time + '秒内完成选择，若在30秒内回答正确的有额外得分！';
-       hintText.style.paddingTop = 60 + 'px';
-       hintText.style.color = 'yellow';
+       $('#cover').addClass('fadeInRight animated');
     }
 
 /* -------------------------------------------------------------------mask for developer details*/
