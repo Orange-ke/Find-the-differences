@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=4bb10469f7808fd52332255c57ac1ee1)
- * Config saved to config.json and https://gist.github.com/4bb10469f7808fd52332255c57ac1ee1
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=f9826b3a0d9816120a5b16680ea3128e)
+ * Config saved to config.json and https://gist.github.com/f9826b3a0d9816120a5b16680ea3128e
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -457,12 +457,12 @@ fieldset[disabled] .btn-danger.active {
   border-color: #dca7a7;
 }
 .progress {
-  background-image: -webkit-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -o-linear-gradient(top, #ebebeb 0%, #f5f5f5 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ebebeb), to(#f5f5f5));
-  background-image: linear-gradient(to bottom, #ebebeb 0%, #f5f5f5 100%);
+  background-image: -webkit-linear-gradient(top, #9b9b9b 0%, #a5a5a5 100%);
+  background-image: -o-linear-gradient(top, #9b9b9b 0%, #a5a5a5 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9b9b9b), to(#a5a5a5));
+  background-image: linear-gradient(to bottom, #9b9b9b 0%, #a5a5a5 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9b9b9b', endColorstr='#ffa5a5a5', GradientType=0);
 }
 .progress-bar {
   background-image: -webkit-linear-gradient(top, #337ab7 0%, #286090 100%);

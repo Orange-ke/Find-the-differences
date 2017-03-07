@@ -18,7 +18,6 @@ $(function() {
       var b_2 = 5; //b_2 for repeating music bonus
       var qar = []; //qar for questions array
       var playN = 0, eye_score = 0 , ear_score = 0 ;
-      var eye_star , ear_star ; // genre stars
       var b , z , x;
       var isPlaying = false, lasting_time = 20, count_t , startButton , c , intervalHandle;
 
@@ -50,6 +49,7 @@ $(function() {
        first();
        counting();
     });
+/* ------------------------------------------------------------test_flow */
 
     $('.choice').click(function () {
        if (k < 5) {
@@ -132,9 +132,69 @@ $(function() {
                 delay();
              },200);  
           }
+
+/* -------------------------------------------------------------------result */
+
           if (n > 10) {
              $('.test_content_1').css('display','none').addClass('fadeOutLeft animatedFast');
+             $('.progress').hide(200);
+             $('.header_title').show(200);
              $('.result').show(200);
+             var pretex = '';
+             var perc , score, final_txt, middle;
+             if (t >= 140) {
+                perc = 99;
+                pretex = '牛逼哄哄！';
+                middle = '您已经没有对手了';
+                final_txt = '，请收下我的膝盖。';
+             } else if (t >= 120 && t < 140) {
+                perc = Math.floor(Math.random()*10) + 89;
+                middle = '高！实在是高';
+                final_txt = '，这位童鞋是飞行员的体格！';
+             } else if (t >= 100 && t < 120) {
+                perc = Math.floor(Math.random()*10) + 79;
+                middle = '欧呦！';
+                final_txt = '一不小心拿了个第二名！';
+             } else if (t >= 80 && t < 100) {
+                perc = Math.floor(Math.random()*15) + 64;
+                middle = '浪里个浪';
+                final_txt = '，请叫我差不多先生！';
+             } else if (t >= 60 && t < 80) {
+                perc = Math.floor(Math.random()*15) + 49;
+                middle = 'No! no! no!';
+                final_txt = '小伙子需要多练习呦！';
+             } else {
+                perc = Math.floor(Math.random()*30) + 19;
+                middle = '尼玛才';
+                final_txt = '，其实你不适合玩游戏...';
+             }
+             score = t;
+               $('.perct').fadeIn(500);
+               $('.perctenge').text(perc + '%');
+               $('.final_score').text(score).prop('counter', 0).animate({
+                counter: $('.final_score').text()
+             }, {
+               duration: 2000,
+               easing: "swing",
+               step: function(now) {
+                   $(this).text(Math.ceil(now));
+                 }
+             });
+             document.title = pretex + '我的得分' + middle + ' ' + score + ' ' + final_txt; 
+             if (eye_score === 5) {
+               $('.eye_3').addClass('highlighted');
+             } else if (eye_score < 5 && eye_score >= 3) {
+               $('.eye_2').addClass('highlighted');  
+             } else {
+               $('.eye_1').addClass('highlighted');  
+             }
+             if (ear_score == 5) {
+               $('.ear_3').addClass('highlighted');
+             } else if (ear_score < 5 && ear_score >= 3) {
+               $('.ear_2').addClass('highlighted');  
+             } else {
+               $('.ear_1').addClass('highlighted');  
+             }
           } 
     });
           
