@@ -31,7 +31,7 @@ $(function() {
       if (n < 11) {
         setTimeout(function() {
           $('.choice').prop('disabled', false);
-        }, 2000);
+        }, 3000);
       }
     }
 
@@ -39,7 +39,7 @@ $(function() {
 
     $('#start_').click(function() {
        $('#cover').fadeIn(200);
-       $('#hint').text('请点击开始，并在屏幕右上角显示的时间内完成选择，若在30秒内选择正确，有额外奖励！');
+       $('#hint').text('请在屏幕右上角显示的时间内完成选择，若在30秒内选择正确，有额外奖励！');
        $('.header_title').hide(200);
        $('.begin_intro').hide(200);
        setTimeout(function() {
@@ -262,15 +262,16 @@ $(function() {
 /* -------------------------------------------------------------------mask for start*/
     
     function slide_down() {
-       $('.slide').show(200);
-       $('#door').addClass('slideDown');
+       $('#slide_down').css('display','block');
+       $('.slide').addClass('slideDown');
     }
 
     function cover() {
        $('#cover').addClass('fadeInRight animated');
        if (k === 5) {
-          $('#hint').css('top','20%');
-          $('#hint').html("<b id='title2'>第二关</b><br><p>请区别两段音乐的不同，音乐只能播放两次，中途不可停止播放！</p>");
+          $('#hint').css('top','10%');
+          $('#hint').html("<b id='title2'>第二关</b><br><p>请区别两段音乐的不同，音乐只能播放两次，中途不可停止播放！</p><br id='line_m'><p>在开始前建议试试音量</p>");
+          $('#start_2').css('display','inline');
           $('#start_bnt').html('开始下一关');
           $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
           if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
