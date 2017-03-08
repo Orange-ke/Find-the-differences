@@ -56,6 +56,23 @@ $(function() {
        first();
        counting();
     });
+
+/* ------------------------------------------------------------music_play_flow */
+   
+    document.getElementById('test').addEventListener('click',function() {
+       document.getElementById('test_song').oncanplaythrough = document.getElementById('test_song').play();
+    });
+    
+    $('#play_bt').click(function() {
+      $('#spinner').addClass('spinning'); 
+      $('#bar').addClass('rotate_bar');
+      setTimeout(function() {
+         document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
+      },600);
+      $('#play_bt').fadeOut(500);
+      $('#play_bt').removeClass('play_bt_anim');
+    });
+
 /* ------------------------------------------------------------test_flow */
 
     $('.choice').click(function () {
@@ -78,7 +95,6 @@ $(function() {
           } else {
                t += 0;
           }
- 
           $('.progress > div').css('width',p + '%');
           $('.progress > div').text(p + '%');
           $('.progress > div').prop('aria-valuenow', p);
@@ -87,10 +103,10 @@ $(function() {
           $('.choice').prop('disabled', true);
           setTimeout( function () {
              k += 1;
+             console.log(k);
              if (k === 5) {
-               k = 5;
                cover();
-               return;
+               return k; 
              }
              $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
              cover();
@@ -105,8 +121,10 @@ $(function() {
              $('.test_content_1').removeClass('fadeOutLeft animatedFast').addClass('fadeInRight animated');
           },200);
         }
-        if (k > 4 && k < 10) {
+    });
 
+    $('.choice').click(function () {    
+        if (k > 4 && k < 10) {
              q = qar;
              var y = $(this).attr('data-choice');
              n += 1;
@@ -121,14 +139,23 @@ $(function() {
              } else {
                 t += 0;
              }
+             $('#spinner').removeClass('spinning'); 
+             $('#bar').removeClass('rotate_bar');
              $('.progress > div').css('width',p + '%');
              $('.progress > div').text(p + '%');
              $('.progress > div').prop('aria-valuenow', p);
              if ($('.test_content_1').hasClass('fadeInRight animated')) {$('.test_content_1').removeClass('fadeInRight animated')};
              $('.test_content_1').addClass('fadeOutLeft animatedFast');
+             $('#play_bt').fadeIn(500);
+             $('#play_bt').addClass('play_bt_anim');
              $('.choice').prop('disabled', true);
              setTimeout( function () {
-               k += 1;
+                k += 1;
+                console.log(k);
+                if (k > 9) {
+                  return;
+                }
+                $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
                 $("#choiceA").html(q[k].A.describe);
@@ -140,9 +167,8 @@ $(function() {
              },200);  
           }
 
-/* -------------------------------------------------------------------result */
-
-          if (n > 10) {
+          if (n > 10) {  //**************************************************result*/
+             document.getElementById('song').pause();
              $('.test_content_1').css('display','none').addClass('fadeOutLeft animatedFast');
              $('.progress').hide(200);
              $('.header_title').show(200);
@@ -176,9 +202,9 @@ $(function() {
                 final_txt = '，其实你不适合玩游戏...';
              }
              score = t;
-               $('.perct').fadeIn(500);
-               $('.perctenge').text(perc + '%');
-               $('.final_score').text(score).prop('counter', 0).animate({
+             $('.perct').show(2500);
+             $('.perctenge').text(perc + '%');
+             $('.final_score').text(score).prop('counter', 0).animate({
                 counter: $('.final_score').text()
              }, {
                duration: 2000,
@@ -234,11 +260,9 @@ $(function() {
             document.getElementById('inputMin').style.display = 'inline';
             delay();
             if (k > 4) {
-              $('#inputMin').css('display','none');
-              $('#_intro > p').css('marginTop',340 + 'px');            
+              document.getElementById('test_song').pause();
+              $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
-              $('#spinner').addClass('spinning'); 
-              $('#bar').addClass('rotate_bar'); 
             }
        };
 
@@ -281,7 +305,7 @@ $(function() {
           $('#hint').html("<b id='title2'>第二关</b><br><p>请区别两段音乐的不同，音乐只能播放两次，中途不可停止播放！</p><br id='line_m'><p>在开始前建议试试音量</p>");
           $('#start_2').css('display','inline');
           $('#start_bnt').html('开始下一关');
-          $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
+          $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
           if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
           if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
           $("#choiceA").html(q[k].A.describe);
@@ -313,11 +337,13 @@ $(function() {
     $('.arrow1').click(function () {
        $('.blink_').toggleClass('blink_anim');
        $('.con_blink').toggleClass('con_blink_anim');
+       $('.arrow1').toggleClass('arrow_anim');
     });
 
     $('.arrow2').click(function () {
        $('.ear_').toggleClass('ear_anim');
        $('.hover__').toggleClass('hover__anim');
+       $('.arrow2').toggleClass('arrow_anim');
     });
 
     setInterval(function() {

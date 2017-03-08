@@ -23,7 +23,7 @@ body {
 	font-family: SimSun,Microsoft Yahei,Arial,serif;
 	font-size: 16px;
 	letter-spacing: .1em;
-	text-shadow: 1px 1px 1px #202020;
+	text-shadow: 1px 1px .5px #202020;
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+100,e0eff9+100,b5c6d0+100;Grey+Gloss+%232 */
     background: rgb(242,246,248); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 100%, rgba(224,239,249,1) 100%, rgba(181,198,208,1) 100%); /* FF3.6-15 */
@@ -47,16 +47,16 @@ div {
     color: #4CAF50;
     padding: 10px 0;
     border-bottom: 2px solid #FE9F00;
-    text-shadow: 1px 1px 2px #202020;
+    text-shadow: 1px 1px 0px #202020;
 }
 
 .begin_intro li p {
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     font-family: KaiTi;
     color: #202020;   
     padding: 10px 0;
-    text-shadow: 1px 1px 2px #202020;
+    text-shadow: 1px 1px 0px #202020;
 }
 
 .test_voice:hover,#start_:hover {
@@ -136,8 +136,8 @@ div {
 }
 
 .blink_anim {
-	-webkit-animation: blink_ 2.5s ease-in-out 1 normal forwards;
-	animation: blink_ 2.5s ease-in-out 1 normal forwards;
+	-webkit-animation: blink_ 1.5s ease-in-out 1 normal both;
+	animation: blink_ 1.5s ease-in-out 1 normal both;
 }
 
 .con_blink {
@@ -146,8 +146,8 @@ div {
 }
 
 .con_blink_anim {
-    -webkit-animation: con_blink 2s linear 1s 1 normal both;
-	animation: con_blink 2s linear 1s 1 normal both;
+    -webkit-animation: con_blink 1s ease-in-out .5s 1 normal both;
+	animation: con_blink 1s ease-in-out .5s 1 normal both;
 }
 
 @-webkit-keyframes blink_ {
@@ -198,8 +198,8 @@ div {
 }
 
 .hover__anim {  
-    -webkit-animation: hover___ 2s linear 1 normal both;
-	animation: hover___ 2s linear 1 normal both;
+    -webkit-animation: hover___ 1s linear 1 normal both;
+	animation: hover___ 1s linear 1 normal both;
 }
 
 @-webkit-keyframes hover___ {
@@ -208,12 +208,12 @@ div {
 		transform: translateX(-130px);
 		opacity: .5;
 	}
-	80% {
+	70% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 1;
 	}
-	90% {
+	80% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 0;
@@ -231,12 +231,12 @@ div {
 		transform: translateX(-130px);
 		opacity: .5;
 	}
-	80% {
+	70% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 1;
 	}
-	90% {
+	80% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 0;
@@ -248,8 +248,8 @@ div {
 	}
 }
 .ear_anim {
-	-webkit-animation: blink___ 2s linear 1.5s 1 normal both;
-	animation: blink___ 2s linear 1.5s 1 normal both;
+	-webkit-animation: blink___ 1s linear .8s 1 normal both;
+	animation: blink___ 1s linear .8s 1 normal both;
 }
 
 @-webkit-keyframes blink___ {
@@ -548,6 +548,7 @@ div {
 }
 
 .eye_test_intro > p {
+	display: block;
 	padding: 0;
 }
 
@@ -559,6 +560,7 @@ div {
 }
 
 b {
+	font-weight: normal;
 	font-size: 16px;
 	line-height: 35px;
 }
@@ -601,21 +603,28 @@ b {
 
 .music_spinner {
 	display: none;
+	width: 100%;
+	height: 340px;
 }
 
-.center1,.center2 {
+.center1,.center2,.center3 {
+	display: block;
 	position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
 
-#play_bt {
+.center1 {
+	top: 70px;
+}
+
+.center3 {
     top: 128px;
-	position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
+}
+
+#play_bt:hover {
+    cursor: pointer;
 }
 
 .play_bt_anim {
@@ -625,30 +634,26 @@ b {
 
 @-webkit-keyframes glow {
     0% {
-    	opacity: 1;
+    	transform: scale(1);
     }
     50% {
-        opacity: .9;
+        transform: scale(1.2);
     }
     100% {
-        opacity: 1;
+        transform: scale(1);
     }
 }
 
 @keyframes glow {
     0% {
-    	opacity: 1;
+    	transform: scale(1);
     }
     50% {
-        opacity: .9;
+        transform: scale(1.2);
     }
     100% {
-        opacity: 1;
+        transform: scale(1);
     }
-}
-
-.center1 {
-	top: 70px;
 }
 
 #rule {
@@ -749,7 +754,6 @@ a:first-child {
 }
 
 .choice {
-	text-decoration: none;
 	letter-spacing: .2em;
 	line-height: 30px;
 	font-size: .8em;
@@ -758,7 +762,7 @@ a:first-child {
     border-radius: 10px 10px;
     color: #f5f5f5;
     border: none;
-    text-shadow: 1px 1px 1px #202020;
+    text-shadow: 1px 1px 2px #202020;
     box-shadow: 1px 1px 2px #202020;
 }
 
@@ -777,10 +781,6 @@ a:first-child {
 
 #choiceD {
 	background: #FF9800;
-}
-
-#choiceC:hover,#choiceD:hover {
-	text-decoration: none;
 }
 
 .choice:disabled {
@@ -811,38 +811,38 @@ a:first-child {
   }
 }
 
+.arrow {
+	padding-left: 10px;
+}
+
 .arrow:hover {
 	cursor: pointer;
 }
 
-.arrow {
-    -webkit-animation: flowing 2s ease-in-out infinite backwards;
-    animation: flowing 2s ease-in-out infinite backwards;
+.arrow_anim {
+    -webkit-animation: flowing 1s ease-in-out infinite backwards;
+    animation: flowing 1s ease-in-out infinite backwards;
 }
 
 @-webkit-keyframes flowing {
     from {
-    	opacity: 0;
-    	-webkit-transform: translateX(0);
-        transform: translateX(0);
+    	-webkit-transform: scale(1);
+        transform: scale(1);
     }
     to {
-    	opacity: 1;
-        -webkit-transform: translateX(50px);
-    	transform: translateX(50px);
+        -webkit-transform: scale(1.2);
+    	transform: scale(1.2);
     }
 }
 
 @keyframes flowing {
     from {
-    	opacity: 0;
-    	-webkit-transform: translateX(0);
-        transform: translateX(0);
+    	-webkit-transform: scale(1);
+        transform: scale(1);
     }
     to {
-    	opacity: 1;
-        -webkit-transform: translateX(50px);
-    	transform: translateX(50px);
+        -webkit-transform: scale(1.2);
+    	transform: scale(1.2);
     } 
 }
 
@@ -974,11 +974,18 @@ a:first-child {
   }
 }
 
+#bar {
+	-webkit-transform-origin: 29px 25px;
+    transform-origin: 29px 25px;
+	-webkit-transform: rotateZ(-60deg);
+	transform: rotateZ(-60deg);
+}
+
 .spinning {
 	-webkit-transform-origin: 50% 124 0;
     transform-origin: 50% 50% 0;
-	-webkit-animation: spin 10s linear .5s infinite normal both;
-	animation: spin 10s linear .5s infinite normal both;
+	-webkit-animation: spin 10s linear .6s infinite normal backwards;
+	animation: spin 10s linear .6s infinite normal backwards;
 }
 
 @-webkit-keyframes spin {
@@ -1094,8 +1101,8 @@ div label {
   	box-shadow: 2px 2px 2px #202020;
   }
   .hover__anim {  
-    -webkit-animation: hover___ 2s linear 1 normal both;
-  	animation: hover___ 2s linear 1 normal both;
+    -webkit-animation: hover___ 1s linear 1 normal both;
+  	animation: hover___ 1s linear 1 normal both;
   }
 
   @-webkit-keyframes hover___ {
@@ -1104,12 +1111,12 @@ div label {
 		transform: translateX(-110px);
 		opacity: .5;
 	}
-	80% {
+	70% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 1;
 	}
-	90% {
+	80% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 0;
@@ -1127,12 +1134,12 @@ div label {
 		transform: translateX(-110px);
 		opacity: .5;
 	}
-	80% {
+	70% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 1;
 	}
-	90% {
+	80% {
 		-webkit-transform: translateX(-10px);
 		transform: translateX(-10px);
         opacity: 0;
@@ -1144,38 +1151,8 @@ div label {
 	}
   }
 
-  #line_m {
-  	display: none;
-  }
-  .arrow {
-    -webkit-animation: flowing 2s ease-in-out infinite backwards;
-    animation: flowing 2s ease-in-out infinite backwards;
-	}
-
-	@-webkit-keyframes flowing {
-	    from {
-	    	opacity: 0;
-	    	-webkit-transform: translateX(0);
-	        transform: translateX(0);
-	    }
-	    to {
-	    	opacity: 1;
-	        -webkit-transform: translateX(25px);
-	    	transform: translateX(25px);
-	    }
-	}
-
-	@keyframes flowing {
-	    from {
-	    	opacity: 0;
-	    	-webkit-transform: translateX(0);
-	        transform: translateX(0);
-	    }
-	    to {
-	    	opacity: 1;
-	        -webkit-transform: translateX(25px);
-	    	transform: translateX(25px);
-	    } 
+	#line_m {
+	  	display: none;
 	}
 	.detail label {
 		width: 50px;
