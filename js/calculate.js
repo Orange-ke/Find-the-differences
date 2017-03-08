@@ -313,6 +313,14 @@ $(function() {
        $('.hover__').toggleClass('hover__anim');
     });
 
+    setInterval(function() {
+       $('#play_bt').toggleClass('play_bt_anim')
+    },1000);
+
+    setInterval(function() {
+       $('#start_').toggleClass('start_anim')
+    },3000);
+
   });
 });
 
