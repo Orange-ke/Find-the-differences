@@ -168,6 +168,7 @@ $(function() {
           }
 
           if (n > 10) {  //**************************************************result*/
+             $('a').attr('href','#title_');
              document.getElementById('song').pause();
              $('.test_content_1').css('display','none').addClass('fadeOutLeft animatedFast');
              $('.progress').hide(200);
@@ -260,7 +261,7 @@ $(function() {
             document.getElementById('inputMin').style.display = 'inline';
             delay();
             if (k > 4) {
-              document.getElementById('test_song').pause();
+              document.getElementById('test_song').remove();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
             }
