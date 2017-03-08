@@ -264,6 +264,7 @@ $(function() {
     function slide_down() {
        $('#slide_down').css('display','block');
        $('.slide').addClass('slideDown');
+       $('.hint_2').css('display','block').addClass('hint_2_anim');
     }
 
     function cover() {
@@ -299,6 +300,19 @@ $(function() {
        lay.style.opacity = 0.6;
        lay.style.backgroundColor = '#000';
     }
+
+/* -------------------------------------------------------------------beginning animation*/    
+
+    $('.arrow1').click(function () {
+       $('.blink_').toggleClass('blink_anim');
+       $('.con_blink').toggleClass('con_blink_anim');
+    });
+
+    $('.arrow2').click(function () {
+       $('.ear_').toggleClass('ear_anim');
+       $('.hover__').toggleClass('hover__anim');
+    });
+
   });
 });
 
