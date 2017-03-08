@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-	<div class="header_title">
+	<div class="header_title" id="title_">
 		<p class="title">
 		<span  class="a">F</span>
 		<span  class="b">i</span>
@@ -38,7 +38,7 @@
 		<span  class="q">s</span>
 		</p>
 	</div>
-	<div class="progress">
+	<div class="progress" id="progress_">
 	    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
 			0%
 	    </div>
@@ -85,10 +85,10 @@
 				    <p>视觉部分</p>
 			   </div>
 			   <div class="choices">
-			   	  <button data-choice="A" id="choiceA" class="choice" disabled="disabled">2处不同</button><br>
-			   	  <button data-choice="B" id="choiceB" class="choice" disabled="disabled">3处不同</button><br>
-			   	  <button data-choice="C" id="choiceC" class="choice" disabled="disabled">4处不同</button><br>
-			   	  <button data-choice="D" id="choiceD" class="choice" disabled="disabled">5处不同</button>
+			   	  <a href="#progress_"><button data-choice="A" id="choiceA" class="choice" disabled="disabled">2处不同</button></a><br>
+			   	  <a href="#progress_"><button data-choice="B" id="choiceB" class="choice" disabled="disabled">3处不同</button></a><br>
+			   	  <a href="#progress_"><button data-choice="C" id="choiceC" class="choice" disabled="disabled">4处不同</button></a><br>
+			   	  <a href="#progress_"><button data-choice="D" id="choiceD" class="choice" disabled="disabled">5处不同</button></a>
 			   </div>
 			</div> <!-- ******************************************** test -->
 			<div hidden class="result">

@@ -14,6 +14,7 @@
 * {
 	padding: 0;
 	margin: 0;
+	text-decoration: none;
 }
 
 /* **************************************************global style*/
@@ -743,11 +744,12 @@ b {
 	box-shadow: 5px 5px 3px #202020;
 }
 
-.choice:first-child {
+a:first-child {
 	margin-top: 20px;
 }
 
 .choice {
+	text-decoration: none;
 	letter-spacing: .2em;
 	line-height: 30px;
 	font-size: .8em;
@@ -761,6 +763,7 @@ b {
 }
 
 #choiceA {
+	margin-top: 20px;
     background: #8BC34A;
 }
 
@@ -774,6 +777,10 @@ b {
 
 #choiceD {
 	background: #FF9800;
+}
+
+#choiceC:hover,#choiceD:hover {
+	text-decoration: none;
 }
 
 .choice:disabled {

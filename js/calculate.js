@@ -35,6 +35,13 @@ $(function() {
       }
     }
 
+    var _1 = $("<a id='wrap' href='#title_'></a>");
+    $('#start_').wrap(_1);
+    $('#wrap').css({
+         'textDecoration':'none',
+         'color':'#202020'
+    });
+
 /* ------------------------------------------------------------append first photo onto the board */
 
     $('#start_').click(function() {
@@ -323,4 +330,3 @@ $(function() {
 
   });
 });
-
