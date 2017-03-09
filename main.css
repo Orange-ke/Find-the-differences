@@ -555,7 +555,6 @@ div {
 /********************************************************Begin intro style*/
 
 .test_content_1 , .result {
-	display: block;
 	position: relative;
 }
 
