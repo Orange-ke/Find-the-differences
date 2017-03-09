@@ -131,9 +131,6 @@
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
 <script type="text/javascript" src='js/calculate.js'></script>
-
-</body>
-
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script async>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -153,11 +150,11 @@
     h.parentNode.insertBefore(c, h);
 })();
 </script>
-<script type="text/javascript">
+<script async type="text/javascript">
 	$(function() {  
-			$('body').on('click', '#share', function() {
-			  ga('send', 'event', 'share', 'share', 'share');
-			});
+			// $('body').on('click', '#share', function() {
+			//   ga('send', 'event', 'share', 'share', 'share');
+			// });
 			$('body').on('click', '#follow', function() {
 			  ga('send', 'event', 'follow', 'follow', 'click_for_QR');
 			});
@@ -167,8 +164,9 @@
 			$('#busuanzi_container_site_uv').css('display','inline');
 			console.log($('#busuanzi_value_site_uv').text());
 			$('#busuanzi_value_site_uv_plus_initial').text(parseInt($('#busuanzi_value_site_uv').text()) + 1241887);//hardcode the initial pageviews that were not included in busuanzi.js
-			},3000)
+			},2000)
         }); 
 	});
 </script>
+</body>
 </html>

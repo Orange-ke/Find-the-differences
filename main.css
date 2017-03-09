@@ -1026,16 +1026,21 @@ a:first-child {
 }
 
 .final_perct > p {
-	line-height: 20px;
+	width: 240px;
+	margin: 0 auto;
+	line-height: 24px;
+	padding-bottom: 16px;
+	padding-left: 5px;
 	font-weight: normal;
 	color: #202020;
-	background: #fff;
+	background: url(music_photo/background.png) no-repeat;
 }
 
 .perctenge {
     font-weight: bold;
 	font-size: 1.3em;
 	color: #FE9F00;
+	padding: 0 3px;
 }
 
 .final_score {
@@ -1044,8 +1049,8 @@ a:first-child {
 	color: #FE9F00;
 }
 
-.ab_detail {
-	margin-top: 30px;
+.final_perct {
+	margin-top: 10px;
 }
 
 .detail > p {
@@ -1053,7 +1058,7 @@ a:first-child {
 	font-weight: bold;
 	font-size: 1.3em;
 	border-bottom: 1px solid #202020;
-	margin: 20px 0;
+	margin: 15px 0;
 }
 
 div label {
@@ -1081,7 +1086,7 @@ div label {
 	line-height: 43px;
 	text-align: center;
 	text-shadow: 1px 1px 1px #202020;
-	margin: 20px 0 10px 0;
+	margin: 25px 0 10px 0;
 	width: 150px;
 	height: 43px;
 	border-radius: 10px 10px;
