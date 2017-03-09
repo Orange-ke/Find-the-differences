@@ -17,6 +17,10 @@
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 /* **************************************************global style*/
 
 body {

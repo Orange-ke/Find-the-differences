@@ -21,7 +21,7 @@ $(function() {
       var qar = []; //qar for questions array
       var playN = 0, eye_score = 0 , ear_score = 0 ;
       var b , z , x;
-      var isPlaying = false, lasting_time = 20, count_t , startButton , c , intervalHandle;
+      var isPlaying = false, lasting_time = 60, count_t , startButton , c , intervalHandle;
 
     function first() {
        var q = qar;
@@ -33,7 +33,7 @@ $(function() {
       if (n < 11) {
         setTimeout(function() {
           $('.choice').prop('disabled', false);
-        }, 3000);
+        }, 2000);
       }
     }
 
@@ -47,14 +47,15 @@ $(function() {
 /* ------------------------------------------------------------append first photo onto the board */
 
     $('#start_').click(function() {
-       $('#cover').fadeIn(200);
-       $('#hint').text('请在屏幕右上角显示的时间内完成选择，若在30秒内选择正确，有额外奖励！');
+       $('#cover').css('display','block').addClass('fadeInRight animated');
+       $('#hint').text('请在屏幕右上角显示的时间内完成选择，在20秒内选择正确，有额外奖励！');
        $('.header_title').hide(200);
        $('.begin_intro').hide(200);
        setTimeout(function() {
          $('.test_content_1').show(200);
          $('.progress').show(200);
        },200)
+
        first();
        counting();
     });
@@ -66,6 +67,7 @@ $(function() {
     });
     
     $('#play_bt').click(function() {
+      delay();
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
       setTimeout(function() {
@@ -103,7 +105,7 @@ $(function() {
           z = b[y].eye_score || 0;
           eye_score += z;
          
-          if (lasting_time - count_t.innerHTML <= 30 && b[y].hasOwnProperty('bonus')) {
+          if (lasting_time - count_t.innerHTML <= 20 && b[y].hasOwnProperty('bonus')) {
                t += b_1;
           } else {
                t += 0;
@@ -177,7 +179,6 @@ $(function() {
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').html(q[k].C.describe)};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').html(q[k].D.describe)};
                 $('.test_content_1').removeClass('fadeOutLeft animatedFast').addClass('fadeInRight animated');
-                delay();
              },200);  
           }
 
@@ -201,8 +202,8 @@ $(function() {
                 final_txt = '，这位童鞋是飞行员的体格！';
              } else if (t >= 100 && t < 120) {
                 perc = Math.floor(Math.random()*10) + 79;
-                middle = '欧呦！';
-                final_txt = '一不小心拿了个第二名！';
+                middle = '哎呦！';
+                final_txt = '，一不小心拿了个第二名！';
              } else if (t >= 80 && t < 100) {
                 perc = Math.floor(Math.random()*15) + 64;
                 middle = '浪里个浪';
@@ -210,11 +211,23 @@ $(function() {
              } else if (t >= 60 && t < 80) {
                 perc = Math.floor(Math.random()*15) + 49;
                 middle = 'No! no! no!';
-                final_txt = '小伙子需要多练习呦！';
+                final_txt = '，小伙子需要多练习呦！';
+             } else if (t >= 40 && t < 60) {
+                perc = Math.floor(Math.random()*15) + 34;
+                middle = '很稳定';
+                final_txt = '，又是倒数第二...';
+             } else if (t >= 20 && t < 40) {
+                perc = Math.floor(Math.random()*15) + 19;
+                middle = '哇塞';
+                final_txt = '，又垫底了!';
+             } else if (t === 0) {
+                perc = 0;
+                middle = 'what！';
+                final_txt = '，这智商没谁了!';
              } else {
-                perc = Math.floor(Math.random()*30) + 19;
-                middle = '尼玛才';
-                final_txt = '，其实你不适合玩游戏...';
+                perc = Math.floor(Math.random()*15) + 4;
+                middle = '哦买噶';
+                final_txt = '，该吃吃脑白金了!';
              }
              score = t;
              $('.perct').show(2500);
@@ -251,7 +264,7 @@ $(function() {
     function zero() {
       c = lasting_time;
       count_t.innerHTML = c;
-      lasting_time -= 5;
+      lasting_time -= 10;
     }
 
     function counting() {
@@ -273,8 +286,11 @@ $(function() {
             countDown();
             document.getElementById('cover').setAttribute("class", "fadeOutLeft animatedFast");
             document.getElementById('inputMin').style.display = 'inline';
+            if (k < 5) {
             delay();
+            }
             if (k > 4) {
+              clearInterval(intervalHandle);
               document.getElementById('test_song').pause();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
