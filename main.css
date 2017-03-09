@@ -1106,12 +1106,15 @@ div label {
 	z-index: 1000;
 }
 
-#GitHub,#busuanzi_container_site_uv {
-    padding-top: 20px;
+#GitHub {
+    padding-top: 28px;
 }
 
 #busuanzi_container_site_uv {
-	padding-left: 25px;
+	padding-top: 15px;
+	padding-left: 35px;
+	color: #4CAF50;
+	text-shadow: 1px 1px 1px #202020;
 }
 
 @media only screen and (max-width: 320px) {
