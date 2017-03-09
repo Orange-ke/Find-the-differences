@@ -1107,12 +1107,18 @@ div label {
 }
 
 #GitHub {
-    padding-top: 28px;
+    margin: 0 auto;
+    padding: 10px 0;
 }
 
 #busuanzi_container_site_uv {
-	padding-top: 15px;
-	padding-left: 35px;
+	display: block;
+	width: 185px;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+#busuanzi_container_site_uv span {
 	color: #4CAF50;
 	text-shadow: 1px 1px 1px #202020;
 }
