@@ -275,7 +275,7 @@ $(function() {
             document.getElementById('inputMin').style.display = 'inline';
             delay();
             if (k > 4) {
-              document.getElementById('test_song').remove();
+              document.getElementById('test_song').pause();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
             }
