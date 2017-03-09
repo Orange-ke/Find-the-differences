@@ -117,7 +117,7 @@
 				</div>
 			<div><button id="follow"><img src="music_photo/developer_.png">关注作者</button></div>
 
-			<iframe style="display: block;" id="GitHub" src="https://ghbtns.com/github-btn.html?user=Orange-ke&repo=Find-the-differences&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="23px"></iframe>
+			<iframe style="display: block;" id="GitHub" src="https://ghbtns.com/github-btn.html?user=Orange-ke&repo=Find-the-differences&type=star&count=true" frameborder="0" scrolling="0" width="78px" height="23px"></iframe>
 			<span id="busuanzi_container_site_uv">已有<span hidden id="busuanzi_value_site_uv"></span><span id="busuanzi_value_site_uv_plus_initial"></span>人参与测试
 			</span>
 			
@@ -131,6 +131,8 @@
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
 <script type="text/javascript" src='js/calculate.js'></script>
+
+</body>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script async>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -140,7 +142,7 @@
     ga('create', 'UA-93353612-1', 'auto');
     ga('send', 'pageview');
 </script>
-<script type='text/javascript'>
+<!-- <script type='text/javascript'>
 (function() {
     var c_ = document.createElement('script'); 
     c_.type = 'text/javascript';
@@ -149,7 +151,7 @@
     var h_ = document.getElementsByTagName('script')[0];
     h_.parentNode.insertBefore(c_, h_);
 })();
-</script>
+</script> -->
 <script async type="text/javascript">
 	$(function() {  
 			// $('body').on('click', '#share', function() {
@@ -163,10 +165,9 @@
 			setTimeout(function(){
 			$('#busuanzi_container_site_uv').css('display','inline');
 			console.log($('#busuanzi_value_site_uv').text());
-			$('#busuanzi_value_site_uv_plus_initial').text(parseInt($('#busuanzi_value_site_uv').text()) + 1241887);//hardcode the initial pageviews that were not included in busuanzi.js
-			},500)
+			$('#busuanzi_value_site_uv_plus_initial').text(parseInt($('#busuanzi_value_site_uv').text()) + 1000);//hardcode the initial pageviews that were not included in busuanzi.js
+			},10000)
         }); 
 	});
 </script>
-</body>
 </html>

@@ -555,6 +555,7 @@ div {
 /********************************************************Begin intro style*/
 
 .test_content_1 , .result {
+	display: none;
 	position: relative;
 }
 
@@ -596,7 +597,7 @@ b {
 	width: 260px;
 	height: 410px;
 	border-radius: 5px 5px;
-	box-shadow: 2px 2px 2px #202020;
+	box-shadow: 2px 2px 2px #202020,-2px 0px 2px #202020;
 	z-index: 889;
 }
 
