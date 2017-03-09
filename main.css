@@ -1094,7 +1094,6 @@ div label {
 	margin-left: -10px;
 	padding-right: 5px;
 	padding-bottom: 3px;
-	margin-bottom: 15px;
 }
 
 #QR {
@@ -1105,6 +1104,10 @@ div label {
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 	z-index: 1000;
+}
+
+#GitHub,#busuanzi_container_site_uv {
+    padding-top: 10px;
 }
 
 @media only screen and (max-width: 320px) {
