@@ -71,6 +71,17 @@ $(function() {
       },600);
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
+      isPlaying = true;
+      document.getElementById('song').addEventListener('ended', function(){
+        playN += 1;
+        isPlaying = false;
+        $('#spinner').removeClass('spinning'); 
+        $('#bar').removeClass('rotate_bar');
+        if (playN < 2) { 
+          $('#play_bt').fadeIn(500);
+          $('#play_bt').addClass('play_bt_anim');
+        }   
+      }); 
     });
 
 /* ------------------------------------------------------------test_flow */
@@ -125,6 +136,7 @@ $(function() {
 
     $('.choice').click(function () {    
         if (k > 4 && k < 10) {
+             playN = 0;
              q = qar;
              var y = $(this).attr('data-choice');
              n += 1;
@@ -328,10 +340,19 @@ $(function() {
        lay.style.height = window.innerHeight + 'px';
        lay.style.top = window.pageYOffset + 'px';
        lay.style.left = window.pageXOffset + 'px';
-       lay.style.zIndex = 666;
-       lay.style.opacity = 0.6;
+       lay.style.zIndex = 990;
+       lay.style.opacity = 0.9;
        lay.style.backgroundColor = '#000';
     }
+
+    $('#follow').click(function() {
+       mask();
+       $('#QR').show(200);
+       $('#overLay').click(function () {
+          $(this).remove();
+          $('#QR').hide(200);
+       });
+    });
 
 /* -------------------------------------------------------------------beginning animation*/    
 

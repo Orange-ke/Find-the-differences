@@ -637,7 +637,7 @@ b {
     	transform: scale(1);
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -649,7 +649,7 @@ b {
     	transform: scale(1);
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
     100% {
         transform: scale(1);
@@ -1071,6 +1071,39 @@ div label {
 .highlighted {
 	background: #FE9F00;
 	box-shadow: 3px 3px 2px #202020;
+}
+
+#follow {
+	font-family: SimSun;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #f5f5f5;
+	line-height: 43px;
+	text-align: center;
+	text-shadow: 1px 1px 1px #202020;
+	margin-top: 20px;
+	width: 150px;
+	height: 43px;
+	border-radius: 10px 10px;
+	border: none;
+	box-shadow: 1px 1px 2px #202020;
+    background: #4CAF50;
+}
+
+#follow img {
+	margin-left: -10px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+}
+
+#QR {
+	display: none;
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 1000;
 }
 
 @media only screen and (max-width: 320px) {
