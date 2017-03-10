@@ -578,9 +578,12 @@ b {
 	display: block;
 	position: relative;
 	margin: 0 auto;
-	outline-style: ridge;
-	outline-color: #FE9F00;
-	outline-width: 3px;
+    border: 1px solid #FE9F00;
+    cursor: pointer;
+}
+
+#photo2 {
+	margin-top: 2px;
 }
 
 #slide_down {
@@ -606,7 +609,6 @@ b {
 }
 
 .music_spinner {
-	display: none;
 	width: 100%;
 	height: 340px;
 }
@@ -1224,4 +1226,17 @@ div label {
 	b {
 		font-size: 12px;
 	}
+}
+
+#popupParis {
+	position: absolute;
+	z-index: 1002;
+	left: 50%;
+	top: 20px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.popphoto {
+	z-index: 1003;
 }

@@ -20,7 +20,7 @@
   },
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
-    "photo": "<img preload class='photos' id='photo1' src='music_photo/111.jpg'><img class='photos' id='photo2' src='music_photo/111.jpg'>",
+    "photo": "<img preload class='photos' id='photo1' src='music_photo/111.jpg'><img class='photos' id='photo2' src='111.jpg'>",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"

@@ -394,5 +394,11 @@ $(function() {
        $('#start_').toggleClass('start_anim')
     },3000);
 
+    $('.pop').click(function() {
+       mask();
+       $('#popupParis').show(200);
+    });
+
   });
+
 });
