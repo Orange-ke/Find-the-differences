@@ -48,7 +48,7 @@ $(function() {
 
     $('#start_').click(function() {
        $('#cover').css('display','block').addClass('fadeInRight animated');
-       $('#hint').text('请在屏幕右上角显示的时间内完成选择，在20秒内选择正确，有额外奖励！');
+       $('#hint').text('请在屏幕左上角显示的时间内完成选择，在20秒内选择正确，有额外奖励！');
        $('.header_title').hide(200);
        $('.begin_intro').hide(200);
        setTimeout(function() {
@@ -270,17 +270,17 @@ $(function() {
     function counting() {
        var startButton = document.getElementById('start_bnt');
        count_t = document.createElement("span");
-       var para = document.getElementById('para');
+       document.body.appendChild(count_t);
        count_t.setAttribute("id" , "inputMin");
-       count_t.style.width = 20 + 'px';
-       count_t.style.height = 20 + 'px';
+       count_t.style.width = 10 + 'px';
+       count_t.style.height = 10 + 'px';
        count_t.style.position = 'absolute';
-       count_t.style.top = .5 + '%';
-       count_t.style.right = 5 + '%';
+       count_t.style.top = 15 + 'px';
+       count_t.style.left = 6 + '%';
        count_t.style.fontSize = 20 + 'px';
        count_t.style.fontWeight = 'bolder';
        count_t.style.color = '#FE9F00';
-       document.getElementById('test_1').appendChild(count_t);
+       count_t.style.zIndex = 1000;
        startButton.onclick = function() {
             zero();
             countDown();
@@ -355,8 +355,8 @@ $(function() {
        lay.id = 'overLay'; 
        lay.style.position = 'absolute';
        lay.style.width = window.innerWidth + 'px';
-       lay.style.height = window.innerHeight + 'px';
-       lay.style.top = window.pageYOffset + 'px';
+       lay.style.height = 687 + 'px';
+       lay.style.top = 0 + 'px';
        lay.style.left = window.pageXOffset + 'px';
        lay.style.zIndex = 990;
        lay.style.opacity = 0.9;
@@ -396,7 +396,18 @@ $(function() {
 
     $('.pop').click(function() {
        mask();
+       $('#shut').show(200);
        $('#popupParis').show(200);
+       $('#overLay').click(function () {
+          $(this).remove();
+          $('#popupParis').hide(200);
+          $('#shut').hide(200);
+       });
+    });
+    $('#shut').click(function() {
+       $('#overLay').remove();
+       $(this).hide(200);
+       $('#popupParis').hide(200);
     });
 
   });
