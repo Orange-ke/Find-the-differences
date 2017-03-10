@@ -1,7 +1,7 @@
 [
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
-    "photo": "<img preload class='photos' id='photo1' src='http://placehold.it/250x200'><img class='photos' id='photo2' src='http://placehold.it/250x200'>",
+    "photo": "<img preload class='photos' id='photo1' src='music_photo/test.jpg'><img class='photos' id='photo2' src='music_photo/test.jpg'>",
     "genre": "eye",
      "A": { 
       "describe": "2处不同",
@@ -20,7 +20,7 @@
   },
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
-    "photo": "<img preload class='photos' id='photo1' src='http://placehold.it/250x200'><img class='photos' id='photo2' src='http://placehold.it/250x200'>",
+    "photo": "<img preload class='photos' id='photo1' src='music_photo/111.jpg'><img class='photos' id='photo2' src='music_photo/111.jpg'>",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"
