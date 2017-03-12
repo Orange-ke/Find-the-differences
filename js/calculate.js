@@ -189,7 +189,6 @@ $(function() {
 
           if (n > 10) {  //**************************************************result*/
              $('a').attr('href','#title_');
-             document.getElementById('song').pause();
              $('.test_content_1').css('display','none').addClass('fadeOutLeft animatedFast');
              $('.progress').hide(200);
              $('.header_title').show(200);
