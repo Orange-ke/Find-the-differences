@@ -303,6 +303,7 @@ $(function() {
               document.getElementById('test_song').remove();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
+              $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
               play();
             }
        };
