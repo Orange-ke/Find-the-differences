@@ -67,7 +67,31 @@ $(function() {
        document.getElementById('test_song').oncanplaythrough = document.getElementById('test_song').play();
     });
     
-   
+  function play() {
+
+    $('#play_bt').click(function() {
+      delay();
+      $('#spinner').addClass('spinning'); 
+      $('#bar').addClass('rotate_bar');
+      setTimeout(function() {
+         document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
+      },600);
+      $('#play_bt').fadeOut(500);
+      $('#play_bt').removeClass('play_bt_anim');
+      isPlaying = true;
+      document.getElementById('song').addEventListener('ended', function(){
+        playN += 1;
+        console.log(playN);
+        isPlaying = false;
+        $('#spinner').removeClass('spinning'); 
+        $('#bar').removeClass('rotate_bar');
+        if (playN < 2) { 
+          $('#play_bt').fadeIn(500);
+          $('#play_bt').addClass('play_bt_anim');
+        }   
+      }); 
+    });
+  } 
 
 /* ------------------------------------------------------------test_flow */
 
@@ -156,28 +180,7 @@ $(function() {
                   return;
                 }
                 $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
-                $('#play_bt').click(function() {
-                  delay();
-                  $('#spinner').addClass('spinning'); 
-                  $('#bar').addClass('rotate_bar');
-                  setTimeout(function() {
-                     document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
-                  },600);
-                  $('#play_bt').fadeOut(500);
-                  $('#play_bt').removeClass('play_bt_anim');
-                  isPlaying = true;
-                  document.getElementById('song').addEventListener('ended', function(){
-                    playN += 1;
-                    console.log(playN);
-                    isPlaying = false;
-                    $('#spinner').removeClass('spinning'); 
-                    $('#bar').removeClass('rotate_bar');
-                    if (playN < 2) { 
-                      $('#play_bt').fadeIn(500);
-                      $('#play_bt').addClass('play_bt_anim');
-                    }   
-                  }); 
-                });                
+                play();
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
                 $("#choiceA").html(q[k].A.describe);
@@ -300,6 +303,7 @@ $(function() {
               document.getElementById('test_song').remove();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
+              play();
             }
        };
 
