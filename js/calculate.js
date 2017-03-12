@@ -161,6 +161,7 @@ $(function() {
              playN = 0;
              $('#spinner').removeClass('spinning'); 
              $('#bar').removeClass('rotate_bar');
+             $("#song").remove();
              $('.progress > div').css('width',p + '%');
              $('.progress > div').text(p + '%');
              $('.progress > div').prop('aria-valuenow', p);
@@ -296,6 +297,7 @@ $(function() {
             if (k > 4) {
               clearInterval(intervalHandle);
               document.getElementById('test_song').pause();
+              document.getElementById('test_song').remove();
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
             }
