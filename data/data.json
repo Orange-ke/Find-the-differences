@@ -2,6 +2,7 @@
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
     "photo": "<img preload class='photos' id='photo1' src='music_photo/test.jpg'><img class='photos' id='photo2' src='music_photo/test.jpg'>",
+    "big_photo":"music_photo/test1.jpg",
     "genre": "eye",
      "A": { 
       "describe": "2处不同",
@@ -20,7 +21,8 @@
   },
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
-    "photo": "<img preload class='photos' id='photo1' src='music_photo/111.jpg'><img class='photos' id='photo2' src='111.jpg'>",
+    "photo": "<img preload class='photos' id='photo1' src='music_photo/111.jpg'><img class='photos' id='photo2' src='music_photo/111.jpg'>",
+    "big_photo":"music_photo/test2.jpg",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"
@@ -40,6 +42,7 @@
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
     "photo": "<img preload class='photos' id='photo1' src='http://placehold.it/250x200'><img class='photos' id='photo2' src='http://placehold.it/250x200'>",
+    "big_photo":"music_photo/test3.jpg",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"
@@ -59,6 +62,7 @@
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
     "photo": "<img preload class='photos' id='photo1' src='http://placehold.it/250x200'><img class='photos' id='photo2' src='http://placehold.it/250x200'>",
+    "big_photo":"music_photo/test4.jpg",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"
@@ -78,6 +82,7 @@
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
     "photo": "<img preload class='photos' id='photo1' src='http://placehold.it/250x200'><img class='photos' id='photo2' src='http://placehold.it/250x200'>",
+    "big_photo":"music_photo/test5.jpg",
     "genre": "eye",
      "A": { 
       "describe": "2处不同"
@@ -95,21 +100,24 @@
       }
   },
   {
-    "describe": "<b>这段音乐的节奏变化是？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='music_photo/1.mp3'></audio>",
+    "describe": "<b>请区分两段音乐那一段是刘德华本人唱的？</b>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "rhythm",
     "A": { 
-      "describe": "越来越快"
+      "describe": "前一段"
     },
     "B": {
-      "describe": "没有变化",
+      "describe": "后一段",
       "bonus": 10,
       "ear_score": 1
+    },
+    "C": {
+      "describe": "都是刘德华本人"
     } 
   },
   {
     "describe": "<b>这段音乐的速度是否有变化？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='music_photo/1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "rhythm",
     "A": {
       "describe": "越来越快"
@@ -122,7 +130,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='music_photo/1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "memo",
     "A": {
       "describe": "完全相同"
@@ -138,7 +146,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='music_photo/1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "memo",
     "A": { 
       "describe": "完全相同"
@@ -154,7 +162,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden preload class='songs' id='song' src='music_photo/1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "memo",
     "A": { 
       "describe": "完全相同"

@@ -27,6 +27,7 @@ $(function() {
        var q = qar;
        k = 0;
        $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
+       $('.popphoto').attr('src',q[k].big_photo);
     }
 
     function delay() { 
@@ -52,11 +53,11 @@ $(function() {
        $('.header_title').hide(200);
        $('.begin_intro').hide(200);
        setTimeout(function() {
-         $('.test_content_1').show(200);
-         $('.progress').show(200);
-       },200)
-
+         $('.test_content_1').show(500);
+         $('.progress').show(500);
+       },300)
        first();
+       over_();
        counting();
     });
 
@@ -78,6 +79,7 @@ $(function() {
       isPlaying = true;
       document.getElementById('song').addEventListener('ended', function(){
         playN += 1;
+        console.log(playN);
         isPlaying = false;
         $('#spinner').removeClass('spinning'); 
         $('#bar').removeClass('rotate_bar');
@@ -124,6 +126,8 @@ $(function() {
                return k; 
              }
              $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
+             $('.popphoto').attr('src',q[k].big_photo);
+             over_();
              cover();
              $('#hint').text('您的可用时间缩短了！');
              $('#start_bnt').text('开始下一题');
@@ -139,8 +143,7 @@ $(function() {
     });
 
     $('.choice').click(function () {    
-        if (k > 4 && k < 10) {
-             playN = 0;
+        if (k > 4 && k < 10) {            
              q = qar;
              var y = $(this).attr('data-choice');
              n += 1;
@@ -155,6 +158,7 @@ $(function() {
              } else {
                 t += 0;
              }
+             playN = 0;
              $('#spinner').removeClass('spinning'); 
              $('#bar').removeClass('rotate_bar');
              $('.progress > div').css('width',p + '%');
@@ -241,7 +245,7 @@ $(function() {
                    $(this).text(Math.ceil(now));
                  }
              });
-             document.title = pretex + '我的得分' + middle + ' ' + score + ' ' + final_txt; 
+             document.title = pretex + '我的得分' + ' ' + score + ' '+ middle + final_txt; 
              if (eye_score === 5) {
                $('.eye_3').addClass('highlighted');
              } else if (eye_score < 5 && eye_score >= 3) {
@@ -307,6 +311,9 @@ $(function() {
          if (c === 0) {
            clearInterval(intervalHandle);
            document.getElementById('inputMin').style.display = 'none';
+           $('#overLay').remove();
+           $('#popupParis').hide(5);
+           $('#shut').hide(5);
            slide_down();
          }
       }
@@ -394,21 +401,23 @@ $(function() {
        $('#start_').toggleClass('start_anim')
     },3000);
 
-    $('.pop').click(function() {
-       mask();
-       $('#shut').show(200);
-       $('#popupParis').show(200);
-       $('#overLay').click(function () {
-          $(this).remove();
-          $('#popupParis').hide(200);
-          $('#shut').hide(200);
+    function over_() {
+       $('.photos').click(function() {
+         mask();
+         $('#shut').show(200);
+         $('#popupParis').show(200);
+         $('#overLay').click(function () {
+            $(this).remove();
+            $('#popupParis').hide(200);
+            $('#shut').hide(200);
+         });
        });
-    });
-    $('#shut').click(function() {
-       $('#overLay').remove();
-       $(this).hide(200);
-       $('#popupParis').hide(200);
-    });
+       $('#shut').click(function() {
+         $('#overLay').remove();
+         $(this).hide(200);
+         $('#popupParis').hide(200);
+       });
+    }
 
   });
 
