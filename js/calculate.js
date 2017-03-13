@@ -4,9 +4,9 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    // $('body').bind('touchstart', function() {
-    //    FastClick.attach(document.body);
-    // });
+    $('body').bind('touchstart', function() {
+       FastClick.attach(document.body);
+    });
 
 /* -------------------------------------------------------------------variable definition*/
 
