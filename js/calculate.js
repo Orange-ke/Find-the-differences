@@ -4,13 +4,11 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    $('body').bind('touchstart', function() {
-       FastClick.attach(document.body);
+    $(function() {
+      FastClick.attach(document.body);
     });
 
 /* -------------------------------------------------------------------variable definition*/
-
-      $('body').fadeIn(500);
 
       var q, k, m; //q for questions; k for question number in JSON; m for answer scores
       var p = 0; //p for progress
