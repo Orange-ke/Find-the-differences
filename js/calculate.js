@@ -72,7 +72,7 @@ $(function() {
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
       setTimeout(function() {
-         document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
+         document.getElementById('song').play();
       },600);
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
@@ -186,7 +186,7 @@ $(function() {
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').html(q[k].C.describe)};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').html(q[k].D.describe)};
                 $('.test_content_1').removeClass('fadeOutLeft animatedFast').addClass('fadeInRight animated');
-             },1000);  
+             },200);  
           }
 
           if (n > 10) {  //**************************************************result*/
