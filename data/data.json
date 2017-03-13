@@ -101,7 +101,7 @@
   },
   {
     "describe": "<b>请区分两段音乐那一段是刘德华本人唱的？</b>",
-    "music": "<audio hidden class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "rhythm",
     "A": { 
       "describe": "前一段"
@@ -117,7 +117,7 @@
   },
   {
     "describe": "<b>这段音乐的速度是否有变化？</b>",
-    "music": "<audio hidden class='songs' id='song' src='music_music/dptest.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/dptest.mp3'></audio>",
     "genre": "rhythm",
     "A": {
       "describe": "越来越快"
@@ -130,7 +130,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "memo",
     "A": {
       "describe": "完全相同"
@@ -146,7 +146,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden class='songs' id='song' src='music_music/dptest.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/dptest.mp3'></audio>",
     "genre": "memo",
     "A": { 
       "describe": "完全相同"
@@ -162,7 +162,7 @@
   },
   {
     "describe": "<b>音频中的两个音乐片段是否完全相同？</b>",
-    "music": "<audio hidden class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
+    "music": "<audio hidden preload class='songs' id='song' src='music_music/liudehua1.mp3'></audio>",
     "genre": "memo",
     "A": { 
       "describe": "完全相同"
