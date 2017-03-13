@@ -4,7 +4,7 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    $('body').bind('touchend', function() {
+    $('body').bind('tap', function() {
        FastClick.attach(document.body);
     });
 
