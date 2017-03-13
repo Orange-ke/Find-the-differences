@@ -303,6 +303,7 @@ $(function() {
               $('.music_spinner').css('display','block');
               $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
               document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
+              delay();
             }
        };
 
