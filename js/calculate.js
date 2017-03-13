@@ -4,11 +4,13 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    $(function() {
-      FastClick.attach(document.body);
+    $('body').bind('touchstart', function() {
+       FastClick.attach(document.body);
     });
 
 /* -------------------------------------------------------------------variable definition*/
+
+      $('body').fadeIn(500);
 
       var q, k, m; //q for questions; k for question number in JSON; m for answer scores
       var p = 0; //p for progress
@@ -72,7 +74,7 @@ $(function() {
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
       setTimeout(function() {
-         document.getElementById('song').play();
+         document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
       },200);
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
@@ -162,12 +164,13 @@ $(function() {
              playN = 0;
              $('#spinner').removeClass('spinning'); 
              $('#bar').removeClass('rotate_bar');
+             $('#song').remove();
              $('.progress > div').css('width',p + '%');
              $('.progress > div').text(p + '%');
              $('.progress > div').prop('aria-valuenow', p);
              if ($('.test_content_1').hasClass('fadeInRight animated')) {$('.test_content_1').removeClass('fadeInRight animated')};
              $('.test_content_1').addClass('fadeOutLeft animatedFast');
-             $('#play_bt').fadeIn(500);
+             $('#play_bt').fadeIn(200);
              $('#play_bt').addClass('play_bt_anim');
              $('.choice').prop('disabled', true);
              setTimeout( function () {
@@ -177,8 +180,7 @@ $(function() {
                   return;
                 }
                 $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
-                document.getElementById('song').play();
-                delay();
+                play();
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
                 $("#choiceA").html(q[k].A.describe);
@@ -302,8 +304,7 @@ $(function() {
               $('#inputMin').css('display','none');           
               $('.music_spinner').css('display','block');
               $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
-              document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
-              delay();
+              play();
             }
        };
 
