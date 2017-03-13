@@ -73,7 +73,7 @@ $(function() {
       $('#bar').addClass('rotate_bar');
       setTimeout(function() {
          document.getElementById('song').play();
-      },600);
+      },200);
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
       isPlaying = true;
