@@ -188,7 +188,7 @@ $(function() {
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').html(q[k].C.describe)};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').html(q[k].D.describe)};
                 $('.test_content_1').removeClass('fadeOutLeft animatedFast').addClass('fadeInRight animated');
-             },200);  
+             },1000);  
           }
 
           if (n > 10) {  //**************************************************result*/
