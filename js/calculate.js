@@ -178,7 +178,7 @@ $(function() {
                   return;
                 }
                 $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
-                play();
+                document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
                 $("#choiceA").html(q[k].A.describe);
