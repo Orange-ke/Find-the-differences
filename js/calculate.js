@@ -14,8 +14,6 @@ $(function() {
 
 /* -------------------------------------------------------------------variable definition*/
 
-      $('body').fadeIn(500);
-
       var q, k, m; //q for questions; k for question number in JSON; m for answer scores
       var p = 0; //p for progress
       var t = 0; //t for total scores
