@@ -8,6 +8,10 @@ $(function() {
        FastClick.attach(document.body);
     });
 
+    $('#play_bt').bind('touchstart', function() {
+       FastClick.attach(document.body);
+    });
+
     $('#play_bt').bind('tap', function() {
        FastClick.attach(document.body);
     });
