@@ -4,10 +4,6 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    $(function() {
-       FastClick.attach(document.body);
-    });
-
     $('#play_bt').bind('touchstart', function() {
        FastClick.attach(document.body);
     });
