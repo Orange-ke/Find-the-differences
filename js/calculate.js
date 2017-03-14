@@ -4,7 +4,7 @@ $(function() {
     $('document').ready(function() {
 /* -------------------------------------------------------------------bind fast-click*/
 
-    $('body').bind('touchstart', function() {
+    $(function() {
        FastClick.attach(document.body);
     });
 
@@ -25,7 +25,7 @@ $(function() {
       var qar = []; //qar for questions array
       var playN = 0, eye_score = 0 , ear_score = 0 ;
       var b , z , x;
-      var isPlaying = false, lasting_time = 60, count_t , startButton , c , intervalHandle;
+      var isPlaying = false, lasting_time = 70, count_t , startButton , c , intervalHandle;
 
     function first() {
        var q = qar;
@@ -77,15 +77,15 @@ $(function() {
       delay();
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
-      // setTimeout(function() {
+      setTimeout(function() {
          document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
-      // },200);
+      },200);
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
       isPlaying = true;
-      document.getElementById('song').addEventListener('ended', function(){
-        playN += 1;
-        console.log(playN);
+      playN += 1;
+      console.log(playN);
+      document.getElementById('song').addEventListener('ended', function(){       
         isPlaying = false;
         $('#spinner').removeClass('spinning'); 
         $('#bar').removeClass('rotate_bar');
@@ -276,7 +276,7 @@ $(function() {
     function zero() {
       c = lasting_time;
       count_t.innerHTML = c;
-      lasting_time -= 10;
+      lasting_time -= 5;
     }
 
     function counting() {
@@ -351,7 +351,7 @@ $(function() {
        $('#cover').addClass('fadeInRight animated');
        if (k === 5) {
           $('#hint').css('top','10%');
-          $('#hint').html("<b id='title2'>第二关</b><br><p>请区别两段音乐的不同，音乐只能播放两次，中途不可停止播放！</p><br id='line_m'><p>在开始前建议试试音量</p>");
+          $('#hint').html("<b id='title2'>第二关</b><br><p>请区别谁是原唱，音乐只能播放两次，中途不可停止播放！</p><br id='line_m'><p>在开始前建议试试音量</p>");
           $('#start_2').css('display','inline');
           $('#start_bnt').html('开始下一关');
           $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
