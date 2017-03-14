@@ -81,6 +81,7 @@ $(function() {
     $('#play_bt').click(function() {
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
+      $('.choice').prop('disabled', true);
       
       document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
      
