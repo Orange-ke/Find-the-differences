@@ -7,7 +7,7 @@ $(function() {
     $('body').bind('touchstart', function() {
      FastClick.attach(document.body);
     });
-    
+
     $('#play_bt').bind('tap', function() {
        FastClick.attach(document.body);
     });
@@ -81,9 +81,9 @@ $(function() {
     $('#play_bt').click(function() {
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
-      // setTimeout(function() {
-           document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
-      // },200);
+      
+      document.getElementById('song').oncanplaythrough = document.getElementById('song').play();
+     
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
       isPlaying = true;
