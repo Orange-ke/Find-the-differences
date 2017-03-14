@@ -42,6 +42,14 @@ $(function() {
       }
     }
 
+    function delay_() { 
+      if (n < 11) {
+        setTimeout(function() {
+          $('.choice').prop('disabled', false);
+        }, 200);
+      }
+    }
+
     var _1 = $("<a id='wrap' href='#title_'></a>");
     $('#start_').wrap(_1);
     $('#wrap').css({
@@ -72,9 +80,7 @@ $(function() {
     });
     
   function play() {
-
     $('#play_bt').click(function() {
-      delay();
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
       setTimeout(function() {
@@ -83,9 +89,10 @@ $(function() {
       $('#play_bt').fadeOut(500);
       $('#play_bt').removeClass('play_bt_anim');
       isPlaying = true;
-      playN += 1;
-      console.log(playN);
-      document.getElementById('song').addEventListener('ended', function(){       
+      document.getElementById('song').addEventListener('ended', function(){
+        delay_(); 
+        playN += 1;
+        console.log(playN);      
         isPlaying = false;
         $('#spinner').removeClass('spinning'); 
         $('#bar').removeClass('rotate_bar');
@@ -166,6 +173,7 @@ $(function() {
                 t += 0;
              }
              playN = 0;
+             console.log(playN);
              $('#spinner').removeClass('spinning'); 
              $('#bar').removeClass('rotate_bar');
              $('#song').remove();
