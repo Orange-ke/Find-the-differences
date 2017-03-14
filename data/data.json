@@ -20,7 +20,7 @@
       }
   },
   {
-    "describe": "<b>请找出两幅图片中有几处不同！</b>",
+    "describe": "<b>找出两幅图片差异,一对脚印算一处.</b>",
     "photo": "<img preload class='photos' id='photo1' src='music_photo/2_origin.jpg'><img class='photos' id='photo2' src='music_photo/2_origin_.jpg'>",
     "big_photo":"music_photo/2_big_pop.jpg",
     "genre": "eye",
