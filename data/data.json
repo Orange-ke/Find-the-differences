@@ -11,13 +11,7 @@
       },
       "B": {
         "describe": "3处不同"
-      },
-      "C": {
-        "describe": "4处不同"
-      },
-      "D": {
-        "describe": "5处不同"
-      }
+      }   
   },
   {
     "describe": "<b>找出两幅图片差异,一对脚印算一处.</b>",
@@ -25,19 +19,13 @@
     "big_photo":"music_photo/2_big_pop.jpg",
     "genre": "eye",
      "A": { 
-      "describe": "2处不同"
+      "describe": "2处不同",
+      "bonus": 10,
+      "eye_score": 1
       },
       "B": {
-        "describe": "3处不同",
-        "bonus": 10,
-        "eye_score": 1
-      },
-      "C": {
-        "describe": "4处不同"
-      },
-      "D": {
-        "describe": "5处不同"
-      }
+        "describe": "3处不同"
+      } 
   },
   {
     "describe": "<b>请找出两幅图片中有几处不同！</b>",
@@ -51,12 +39,6 @@
         "describe": "3处不同",
         "bonus": 10,
         "eye_score": 1
-      },
-      "C": {
-        "describe": "4处不同"
-      },
-      "D": {
-        "describe": "5处不同"
       }
   },
   {
@@ -68,15 +50,9 @@
       "describe": "2处不同"
       },
       "B": {
-        "describe": "3处不同"
-      },
-      "C": {
-        "describe": "4处不同",
+        "describe": "3处不同",
         "bonus": 10,
         "eye_score": 1
-      },
-      "D": {
-        "describe": "5处不同"
       }
   },
   {
@@ -88,15 +64,9 @@
       "describe": "2处不同"
       },
       "B": {
-        "describe": "3处不同"
-      },
-      "C": {
-        "describe": "4处不同",
+        "describe": "3处不同",
         "bonus": 10,
         "eye_score": 1
-      },
-      "D": {
-        "describe": "5处不同"
       }
   },
   {

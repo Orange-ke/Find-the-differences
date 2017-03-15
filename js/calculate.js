@@ -23,13 +23,19 @@ $(function() {
       var qar = []; //qar for questions array
       var playN = 0, eye_score = 0 , ear_score = 0 ;
       var b , z , x;
-      var isPlaying = false, lasting_time = 70, count_t , startButton , c , intervalHandle;
+      var isPlaying = false, lasting_time = 120, count_t , startButton , c , intervalHandle;
 
     function first() {
        var q = qar;
        k = 0;
        $('.eye_test_intro > p').html(q[k].describe).append(q[k].photo);
        $('.popphoto').attr('src',q[k].big_photo);
+       if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
+       if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
+       $("#choiceA").html(q[k].A.describe);
+       $("#choiceB").html(q[k].B.describe);
+       if (q[k].hasOwnProperty('C')) {$('#choiceC').html(q[k].C.describe)};
+       if (q[k].hasOwnProperty('D')) {$('#choiceD').html(q[k].D.describe)};
     }
 
     function delay() { 
@@ -59,7 +65,7 @@ $(function() {
 
     $('#start_').click(function() {
        $('#cover').css('display','block').addClass('fadeInRight animated');
-       $('#hint').text('请在屏幕左上角显示的时间内完成选择，在20秒内选择正确，有额外奖励！');
+       $('#hint').text('请在屏幕左上角显示的时间内完成选择，在30秒内选择正确，有额外奖励！');
        $('.header_title').hide(200);
        $('.begin_intro').hide(200);
        setTimeout(function() {
@@ -67,6 +73,7 @@ $(function() {
          $('.progress').show(500);
        },300)
        first();
+
        over_();
        counting();
     });
@@ -120,7 +127,7 @@ $(function() {
           z = b[y].eye_score || 0;
           eye_score += z;
          
-          if (lasting_time - count_t.innerHTML <= 20 && b[y].hasOwnProperty('bonus')) {
+          if (lasting_time - count_t.innerHTML <= 30 && b[y].hasOwnProperty('bonus')) {
                t += b_1;
           } else {
                t += 0;
