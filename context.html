@@ -10,7 +10,7 @@
 	<title>Find The Diferences</title>
 	<!-- <link rel="stylesheet" href="min.css"> -->
     <link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="main_min.css">
 </head>
 <body>
 <div class="container" id="1__">
@@ -131,9 +131,9 @@
 <button hidden id='shut'></button>
 <div hidden id='popupParis'><img class='popphoto' src='' alt='big_img'></div>
 
-<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/fastclick.js"></script>
-<script type="text/javascript" src='js/calculate.js'></script>
+<script type="text/javascript" src='js/calculate_min.js'></script>
 
 </body>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -156,11 +156,13 @@
 })();
 </script> -->
 <script async type="text/javascript">
-    $('body').on('touchmove', false);
 	$(function() {  
-			// $('body').on('click', '#share', function() {
-			//   ga('send', 'event', 'share', 'share', 'share');
-			// });
+		    $('body').on('click', '#start_', function() {
+			   ga('send', 'event', 'start', 'start', 'start');
+			});
+            $('body').on('click', '#start_2', function() {
+        	   ga('send', 'event', 'start_two', 'start_two', 'start_two');
+        	});
 			$('body').on('click', '#follow', function() {
 			  ga('send', 'event', 'follow', 'follow', 'click_for_QR');
 			});
