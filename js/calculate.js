@@ -77,7 +77,7 @@ $(function() {
        document.getElementById('test_song').oncanplaythrough = document.getElementById('test_song').play();
     });
     
-  function play() {
+   function play() {
     $('#play_bt').click(function() {
       $('#spinner').addClass('spinning'); 
       $('#bar').addClass('rotate_bar');
@@ -101,7 +101,7 @@ $(function() {
         }   
       }); 
     });
-  } 
+   } 
 
 /* ------------------------------------------------------------test_flow */
 
@@ -125,6 +125,7 @@ $(function() {
           } else {
                t += 0;
           }
+          console.log(t);
           $('.progress > div').css('width',p + '%');
           $('.progress > div').text(p + '%');
           $('.progress > div').prop('aria-valuenow', p);
@@ -171,8 +172,7 @@ $(function() {
              } else {
                 t += 0;
              }
-             playN = 0;
-             console.log(playN);
+             console.log(t);
              $('#spinner').removeClass('spinning'); 
              $('#bar').removeClass('rotate_bar');
              $('#song').remove();
@@ -184,14 +184,18 @@ $(function() {
              $('#play_bt').fadeIn(200);
              $('#play_bt').addClass('play_bt_anim');
              $('.choice').prop('disabled', true);
-             setTimeout( function () {
+             setTimeout(function() {
+                playN = 0;
+                console.log(playN);
+             },100);
+             setTimeout( function() {
                 k += 1;
                 console.log(k);
                 if (k > 9) {
                   return;
                 }
                 $('.eye_test_intro > p').html(q[k].describe).append(q[k].music);
-                play();
+                // play();
                 if (q[k].hasOwnProperty('C')) {$('#choiceC').css('display', 'inline')} else {$('#choiceC').css('display', 'none')};
                 if (q[k].hasOwnProperty('D')) {$('#choiceD').css('display', 'inline')} else {$("#choiceD").css('display', 'none')};
                 $("#choiceA").html(q[k].A.describe);
